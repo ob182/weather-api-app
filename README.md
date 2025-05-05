@@ -1,4 +1,4 @@
-## 🔐 API Credentials Setup & Security
+## API Credentials Setup & Security
 
 This application uses the free [WeatherAPI.com](https://www.weatherapi.com/) service to fetch live weather data.
 
