@@ -1,6 +1,6 @@
 body {
   font-family: 'Inter', sans-serif;
-  background: url('https://plus.unsplash.com/premium_photo-1730051168806-d2e135f93361?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+  background: url('https://images.unsplash.com/photo-1591357112637-073ef9381400?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
   background-size: cover;
   margin: 0;
   padding: 0;
@@ -28,7 +28,7 @@ h1 {
 .instructions {
   font-size: 14px;
   color: #555;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 .instructions a {
   color: #00796b;
@@ -47,6 +47,11 @@ input {
   margin-bottom: 10px;
 }
 
+.toggle {
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
 button {
   padding: 10px 15px;
   background-color: #0d9488;
@@ -62,11 +67,44 @@ button:hover {
   background-color: #0f766e;
 }
 
+#suggestions {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 10px 0;
+  max-height: 150px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#suggestions li {
+  padding: 8px;
+  cursor: pointer;
+}
+#suggestions li:hover {
+  background-color: #f0f0f0;
+}
+
 #weatherDisplay {
   font-size: 16px;
   margin-top: 25px;
   color: #333;
   animation: fadeIn 0.6s ease-in-out;
+}
+
+#forecastDisplay {
+  margin-top: 20px;
+}
+
+.forecast-day {
+  padding: 10px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+.forecast-day img {
+  vertical-align: middle;
 }
 
 footer {
@@ -88,4 +126,3 @@ footer a:hover {
 }
 
 
-  
