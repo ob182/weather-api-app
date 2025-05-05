@@ -21,5 +21,5 @@ This is a beginner-friendly web app that shows live weather data using [WeatherA
 3. Copy your API key from the dashboard
 
 ## 🔗 Live App
-
+https://ob182.github.io/weather-api-app/
 
