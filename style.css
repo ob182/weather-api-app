@@ -40,3 +40,17 @@ body {
     margin-top: 20px;
   }
 
+  .instructions {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  .instructions a {
+    color: #00796b;
+    text-decoration: none;
+  }
+  .instructions a:hover {
+    text-decoration: underline;
+  }
+
+  
