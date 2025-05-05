@@ -1,13 +1,26 @@
 function getWeather() {
     const city = document.getElementById("cityInput").value;
-    const apiKey = prompt("Enter your WeatherAPI.com key:");
+  
+    // ✅ Check if key is already stored in session
+    let apiKey = sessionStorage.getItem("weatherApiKey");
+  
+    if (!apiKey) {
+      // Ask user for key ONCE per session
+      apiKey = prompt("Enter your WeatherAPI.com key:");
+      if (!apiKey) {
+        alert("API key is required.");
+        return;
+      }
+      sessionStorage.setItem("weatherApiKey", apiKey);
+    }
+  
     const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`;
   
     fetch(url)
       .then(response => response.json())
       .then(data => {
         if (data.error) {
-          document.getElementById("weatherDisplay").innerHTML = "City not found!";
+          document.getElementById("weatherDisplay").innerHTML = "City not found or invalid API key.";
           return;
         }
   
@@ -28,6 +41,12 @@ function getWeather() {
         document.getElementById("weatherDisplay").innerHTML = "Error fetching weather data.";
       });
   }
+  
+  // Optional: Button to reset API key manually
+  function resetApiKey() {
+    sessionStorage.removeItem("weatherApiKey");
+    alert("API key cleared. Reload the page to enter a new one.");
+  }
 
   
-  
+
