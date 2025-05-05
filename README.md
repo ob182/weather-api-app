@@ -19,3 +19,5 @@ This application uses the free [WeatherAPI.com](https://www.weatherapi.com/) ser
 - You can manually reset the key using the “Reset API Key” button
 
 This approach ensures your key remains secure and complies with the assignment’s credential and security requirements.
+
+Portions of this were enhanced with assistance from ChatGPT.
