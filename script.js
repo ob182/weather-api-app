@@ -1,17 +1,9 @@
-let apiKey = sessionStorage.getItem("weatherApiKey");
+let apiKey;
 let useFahrenheit = false;
-
-if (!apiKey) {
-  apiKey = prompt("Enter your WeatherAPI.com key:");
-  if (!apiKey) {
-    alert("API key is required.");
-  } else {
-    sessionStorage.setItem("weatherApiKey", apiKey);
-  }
-}
 
 function resetApiKey() {
   sessionStorage.removeItem("weatherApiKey");
+  apiKey = null;
   alert("API key cleared. Reload the page to enter a new one.");
 }
 
@@ -24,6 +16,11 @@ function toggleUnits() {
 function autocompleteCity() {
   const input = document.getElementById("cityInput").value;
   if (!input) return;
+
+  if (!apiKey) {
+    apiKey = sessionStorage.getItem("weatherApiKey");
+    if (!apiKey) return;
+  }
 
   fetch(`https://api.weatherapi.com/v1/search.json?key=${apiKey}&q=${input}`)
     .then(res => res.json())
@@ -48,6 +45,18 @@ function getWeather() {
   const forecastDisplay = document.getElementById("forecastDisplay");
   weatherDisplay.innerHTML = "";
   forecastDisplay.innerHTML = "";
+
+  if (!apiKey) {
+    apiKey = sessionStorage.getItem("weatherApiKey");
+    if (!apiKey) {
+      apiKey = prompt("Enter your WeatherAPI.com key:");
+      if (!apiKey) {
+        alert("API key is required.");
+        return;
+      }
+      sessionStorage.setItem("weatherApiKey", apiKey);
+    }
+  }
 
   fetch(`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=5`)
     .then(response => response.json())

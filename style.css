@@ -6,18 +6,19 @@ body {
   padding: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
+  align-items: flex-start;
+  min-height: 100vh;
 }
 
 .container {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 16px;
-  padding: 40px 30px;
+  padding: 30px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 480px;
+  margin: 40px auto;
   text-align: center;
-  width: 360px;
-  max-width: 90%;
 }
 
 h1 {
@@ -28,7 +29,7 @@ h1 {
 .instructions {
   font-size: 14px;
   color: #555;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 .instructions a {
   color: #00796b;
@@ -39,7 +40,7 @@ h1 {
 }
 
 input {
-  width: 80%;
+  width: 100%;
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -61,6 +62,7 @@ button {
   cursor: pointer;
   font-size: 16px;
   margin: 5px;
+  width: 45%;
 }
 
 button:hover {
@@ -76,6 +78,7 @@ button:hover {
   background: white;
   border: 1px solid #ccc;
   border-radius: 5px;
+  text-align: left;
 }
 
 #suggestions li {
@@ -94,17 +97,37 @@ button:hover {
 }
 
 #forecastDisplay {
-  margin-top: 20px;
+  margin-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
 }
 
 .forecast-day {
+  flex: 1 1 120px;
+  max-width: 140px;
   padding: 10px;
-  background: rgba(255,255,255,0.7);
+  background: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
-  margin-bottom: 15px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+.forecast-day:hover {
+  transform: translateY(-4px);
+}
+.forecast-day h3 {
+  font-size: 14px;
+  margin: 5px 0;
+}
+.forecast-day p {
+  font-size: 13px;
+  margin: 5px 0;
 }
 .forecast-day img {
-  vertical-align: middle;
+  width: 48px;
+  height: 48px;
 }
 
 footer {
@@ -124,5 +147,6 @@ footer a:hover {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
 
 

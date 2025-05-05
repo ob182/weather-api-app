@@ -15,15 +15,19 @@
     </p>
     <input type="text" id="cityInput" placeholder="Enter city name" oninput="autocompleteCity()">
     <ul id="suggestions"></ul>
+
     <div class="toggle">
       <label>
         <input type="checkbox" id="unitToggle" onchange="toggleUnits()"> Show in Fahrenheit
       </label>
     </div>
+
     <button onclick="getWeather()">Get Weather</button>
     <button onclick="resetApiKey()">Reset API Key</button>
+
     <div id="weatherDisplay"></div>
     <div id="forecastDisplay"></div>
+
     <footer>
       <p>Powered by 
         <a href="https://www.weatherapi.com/" target="_blank">WeatherAPI.com</a>
@@ -32,6 +36,5 @@
   </div>
   <script src="script.js"></script>
 </body>
-</html> 
-
+</html>
 
